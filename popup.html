@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Focus Guard</h1>
+
+    <div class="toggle-row">
+      <span>Blocking</span>
+      <label class="switch">
+        <input type="checkbox" id="masterToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="section">
+      <div class="toggle-row small">
+        <span>Schedule mode</span>
+        <label class="switch">
+          <input type="checkbox" id="scheduleToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="schedule-row" id="scheduleRow">
+        <input type="time" id="startTime" value="09:00">
+        <span>to</span>
+        <input type="time" id="endTime" value="17:00">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="toggle-row small">
+        <span>Strict mode 🔒</span>
+        <label class="switch">
+          <input type="checkbox" id="strictToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <p class="hint">Requires typing a code to turn off blocking or remove a site.</p>
+    </div>
+
+    <div class="add-site">
+      <input type="text" id="siteInput" placeholder="e.g. youtube.com">
+      <button id="addBtn">Add</button>
+    </div>
+
+    <ul id="siteList"></ul>
+
+    <div class="stats">
+      <span id="statsText">0 blocks total</span>
+      <button id="resetStats">Reset</button>
+    </div>
+
+    <a href="https://www.buymeacoffee.com/nelsonmm" target="_blank" class="coffee-link">
+      ☕ Buy me a coffee
+    </a>
+  </div>
+
+  <!-- Strict mode confirmation modal -->
+  <div id="strictModal" class="modal hidden">
+    <div class="modal-box">
+      <p>Type this code to confirm:</p>
+      <div class="code" id="codeDisplay">0000</div>
+      <input type="text" id="codeInput" placeholder="Enter code">
+      <div class="modal-actions">
+        <button id="codeCancel">Cancel</button>
+        <button id="codeConfirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
