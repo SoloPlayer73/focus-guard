@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
   "name": "Focus Guard",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Block distracting websites on a schedule and stay focused.",
-  "permissions": ["storage", "tabs", "declarativeNetRequest", "alarms"],
+  "permissions": ["storage", "declarativeNetRequest", "alarms"],
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html",
